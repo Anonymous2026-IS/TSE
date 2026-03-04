@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>A DUAL-PATH EFFICIENT EEG ENCODER FOR BRAIN-ASSISTED TARGET SPEAKER
+EXTRACTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <!-- <link rel="shortcut icon" href="../../img/ico.png"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $("#div1").toggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <br>
+                <h1>A DUAL-PATH EFFICIENT EEG ENCODER FOR BRAIN-ASSISTED TARGET SPEAKER
+EXTRACTION</h1>
+                <br>
+                <h4>
+    Wang Xiang, Xue Zhang, Cunhang Fan, Jun Xue, Juan Liu, Ming Li
+</h4>
+<h4>School of Computer Science, Wuhan University, Wuhan, China</h4>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <img class="img-responsive" style="width: 100%;" src="./tse.png">
+                    </div>
+                    <!-- <div class="col-xs-12 col-sm-4" style="margin-top: 5%">
+                        <img class="img-responsive" src="img/ours_0087.gif">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-left">
+                <h3>Abstract</h3>
+                <p>Brain-assisted target speaker extraction can selectively extract
+the target speaker’s speech by decoding the listener’s brain
+activity from electroencephalogram (EEG) signals. However,
+EEG signals have low signal-to-noise ratio, high dimensionality, and non-stationary characteristics, making it very challenging to efficiently extract advanced features. To address
+these limitations, this paper proposes a dual-path Receptance Weighted Key Value-like (RWKV) EEG encoder network designed to mitigate the inefficiency and difficulty of modeling
+long sequences and weak correlations inherent in EEG signals. Specifically, the proposed dual-path RWKV EEG encoder overcomes the limitations of traditional EEG encoders by applying space and channel interaction modules to EEG
+data, enabling the model to simultaneously capture multidi-mensional spatiotemporal frequency information in EEG signals. This dual-path collaborative design enables the model to
+mimic the information processing mechanism of the brain and integrate global dynamics while deepening local feature extraction, these operations are conducted with linear computational complexity. The experimental results on three publicly
+available datasets show that the proposed model significantly outperforms current state-of-the-art methods in different evaluation metrics.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-left">
+                <h3>Links</h3>
+                <!-- <a href="#">
+                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> Paper</button>
+                </a> -->
+                <!-- <a href="#">
+                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> Supplementary Material (11MB)</button>
+                </a> -->
+                <a href="#">
+                    <button type="button" class="btn btn-primary"><img src="./GitHub-Mark-Light-32px.png"
+                            height="16px">
+                        Codes</button>
+                </a>
+                <a href="http://iiphci.ahu.edu.cn/toAuditoryAttention">
+                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-folder-open"
+                            aria-hidden="true"></span>&nbsp;&nbsp;AVED Dataset</button>
+                </a>
+            </div>
+        </div>
+        <div class="row" , style="overflow: overlay">
+            <div class="col-xs-12 text-left">
+                <!-- <h3>Examples</h3> -->
+                <!-- <button id="button1" type="button" class="btn btn-info">More Comparisons <span
+                        class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button> -->
+                <!-- <a href="result.html"><button type="button" class="btn btn-info">Full Results on ETH3D Datasets <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a> -->
+                <!-- <a href="https://1drv.ms/u/s!AoA3NyEQIlSOcs4HBTm4lY9WwZc?e=N1hpmF">
+                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"
+                            aria-hidden="true"></span> Download Full Results on DEMAND Datasets (300M)</button>
+                </a> -->
+                <h3>Speech Samples</h3>
+                <p>The model is evaluated with Cocktail Party dataset :
+                </p>
+            </div>
+            <!-- <h3>&nbsp</h3> -->
+            <hr>
+<table class="table table-hover">
+  <thead class="w-100">
+    <tr style="border-top:1px solid black" class="text-center">
+      <th style="width: 200px;">Mixture Speech</th>
+      <th style="width: 200px;">Ground Truth</th>
+      <th style="width: 200px;">Extraction Speech</th>
+    </tr>
+  </thead>
+  <tbody class="w-100">
+    <tr style="border-top:1px solid black">
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/mix1.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/clean1.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/est1.wav" type="audio/wav">
+      </audio></td>
+    </tr>
+
+    <tr style="border-top:1px solid black">
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/mix2.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/clean2.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/est2.wav" type="audio/wav">
+      </audio></td>
+    </tr>
+
+    <tr style="border-top:1px solid black">
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/mix3.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/clean3.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/est3.wav" type="audio/wav">
+      </audio></td>
+    </tr>
+
+    <tr style="border-top:1px solid black">
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/mix4.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/clean4.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/est4.wav" type="audio/wav">
+      </audio></td>
+    </tr>
+
+    <tr style="border-top:1px solid black">
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/mix5.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/clean5.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/est5.wav" type="audio/wav">
+      </audio></td>
+    </tr>
+
+    <tr style="border-top:1px solid black; border-bottom:1px solid black">
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/mix6.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/clean6.wav" type="audio/wav">
+      </audio></td>
+      <td><audio controls preload="metadata" style="width: 180px;">
+        <source src="./data/tse/est6.wav" type="audio/wav">
+      </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+        <!-- <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+                <div class="row">
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/teaser_0030.gif">
+                    </div>
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/ours_0030.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0">
+                <div class="row">
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/teaser_0010.gif">
+                    </div>
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/ours_0010.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+                <div class="row">
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/teaser_0110.gif">
+                    </div>
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/ours_0110.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0">
+                <div class="row">
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/teaser_0126.gif">
+                    </div>
+                    <div class="col-xs-12 teaser-img">
+                        <img class="img-responsive" src="img/ours_0126.gif">
+                    </div>
+                </div>
+            </div> -->
+<!--         <div class="row" id="ref">
+            <div class="col">
+                <h2>References</h2>
+                <div>
+                    <p>
+                        <a name="1">[1]</a> Triantafyllos Afouras, Joon Son Chung, Andrew Senior, Oriol Vinyals, and Andrew Zisserman.
+                        Deep audio-visual speech recognition. IEEE transactions on pattern analysis and machine intel-
+                        ligence, 2018.
+                    </p>
+                    <p>
+                        <a name="2">[2]</a> Efthymios Tzinis, Zhepei Wang, and Paris Smaragdis. Sudo rm-rf: efficient networks for universal
+                        audio source separation. In IEEE 30th International Workshop on Machine Learning for Signal
+                        Processing (MLSP), pp. 1–6. IEEE, 2020.
+
+                    </p>
+                    <p>
+                        <a name="3">[3]</a> Yi Luo, Zhuo Chen, and Takuya Yoshioka. Dual-path rnn: efficient long sequence modeling for
+                        time-domain single-channel speech separation. In IEEE International Conference on Acoustics,
+                        Speech and Signal Processing (ICASSP), pp. 46–50. IEEE, 2020.
+                    </p>
+                    <p>
+                        <a name="4">[4]</a> Cem Subakan, Mirco Ravanelli, Samuele Cornell, Mirko Bronzi, and Jianyuan Zhong. Attention is
+                        all you need in speech separation. In IEEE International Conference on Acoustics, Speech and
+                        Signal Processing (ICASSP), pp. 21–25. IEEE, 2021.
+
+                    </p>
+                    <p>
+                        <a name="5">[5]</a> Xiaolin Hu, Kai Li, Weiyi Zhang, Yi Luo, Jean-Marie Lemercier, and Timo Gerkmann. Speech
+                        separation using an asynchronous fully recurrent convolutional neural network. volume 34, pp.
+                        22509–22522, 2021.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+ -->
+
+
+<!--     <style type="text/css">
+        .container {
+            background-color: #FBFBFC;
+        }
+
+        .teaser-img {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .img-responsive {
+            margin: auto;
+        }
+    </style>
+</body>
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=SPQzIPBhDWmD-p39nZbUjR6miPKEbrMPPw8Uu3ThVZE'></script> -->
+</html>
